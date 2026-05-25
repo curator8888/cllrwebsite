@@ -154,6 +154,7 @@ export default function PolicySection() {
           {/* Navigation arrows - desktop only */}
           <button
             onClick={goPrev}
+            aria-label="Previous policy"
             style={{
               position: 'absolute',
               left: '-20px',
@@ -181,6 +182,7 @@ export default function PolicySection() {
           </button>
           <button
             onClick={goNext}
+            aria-label="Next policy"
             style={{
               position: 'absolute',
               right: '-20px',
@@ -279,6 +281,8 @@ export default function PolicySection() {
               <button
                 key={i}
                 onClick={() => goTo(i)}
+                aria-label={`Go to policy ${i + 1}`}
+                aria-current={currentIndex === i ? 'true' : undefined}
                 style={{
                   width: currentIndex === i ? '28px' : '8px',
                   height: '8px',

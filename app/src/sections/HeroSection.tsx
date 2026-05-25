@@ -105,9 +105,13 @@ export default function HeroSection() {
             <a href="mailto:david@david4olney.uk?subject=Join%20Our%20Campaign" className="btn btn-primary" style={{ padding: '0.75rem 1.75rem', fontSize: '0.95rem' }}>
               Join Our Campaign
             </a>
-            <a href="#contact" className="btn" style={{ background: 'rgba(255,255,255,0.1)', color: 'white', border: '1px solid rgba(255,255,255,0.25)', padding: '0.75rem 1.75rem', fontSize: '0.95rem' }}>
+            <button
+              onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
+              className="btn"
+              style={{ background: 'rgba(255,255,255,0.1)', color: 'white', border: '1px solid rgba(255,255,255,0.25)', padding: '0.75rem 1.75rem', fontSize: '0.95rem', cursor: 'pointer' }}
+            >
               Get in Touch
-            </a>
+            </button>
           </div>
         </div>
 

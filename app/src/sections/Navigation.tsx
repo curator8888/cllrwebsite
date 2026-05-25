@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50)
@@ -10,6 +11,7 @@ export default function Navigation() {
   }, [])
 
   const scrollTo = (id: string) => {
+    setMenuOpen(false)
     const el = document.querySelector(id)
     if (el) el.scrollIntoView({ behavior: 'smooth' })
   }
@@ -57,6 +59,7 @@ export default function Navigation() {
           </div>
         </div>
 
+        {/* Desktop nav */}
         <div className="nav-links" style={{ display: 'none', alignItems: 'center', gap: '2rem' }}>
           {[
             { label: 'About', href: '#about' },
@@ -89,7 +92,80 @@ export default function Navigation() {
             Join Our Campaign
           </a>
         </div>
+
+        {/* Mobile hamburger */}
+        <button
+          className="mobile-menu-btn"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
+          aria-expanded={menuOpen}
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '5px',
+            background: 'none',
+            border: 'none',
+            cursor: 'pointer',
+            padding: '8px',
+          }}
+        >
+          <span style={{ width: '24px', height: '2px', background: 'var(--colour-text-dark)', borderRadius: '1px', transition: 'transform 0.2s', transform: menuOpen ? 'rotate(45deg) translate(5px, 5px)' : 'none' }} />
+          <span style={{ width: '24px', height: '2px', background: 'var(--colour-text-dark)', borderRadius: '1px', transition: 'opacity 0.2s', opacity: menuOpen ? 0 : 1 }} />
+          <span style={{ width: '24px', height: '2px', background: 'var(--colour-text-dark)', borderRadius: '1px', transition: 'transform 0.2s', transform: menuOpen ? 'rotate(-45deg) translate(5px, -5px)' : 'none' }} />
+        </button>
       </div>
+
+      {/* Mobile menu dropdown */}
+      {menuOpen && (
+        <div
+          className="mobile-menu"
+          style={{
+            position: 'absolute',
+            top: '64px',
+            left: 0,
+            right: 0,
+            background: 'rgba(255,255,255,0.98)',
+            backdropFilter: 'blur(12px)',
+            borderBottom: '1px solid rgba(226,232,240,0.6)',
+            padding: '1rem clamp(1rem, 5vw, 3rem)',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '1rem',
+            boxShadow: '0 10px 30px rgba(0,0,0,0.08)',
+          }}
+        >
+          {[
+            { label: 'About', href: '#about' },
+            { label: 'Priorities', href: '#priorities' },
+            { label: 'Contact', href: '#contact' },
+          ].map((link) => (
+            <button
+              key={link.href}
+              onClick={() => scrollTo(link.href)}
+              style={{
+                background: 'none',
+                border: 'none',
+                fontWeight: 500,
+                fontSize: '1rem',
+                color: 'var(--colour-text-dark)',
+                cursor: 'pointer',
+                padding: '0.5rem 0',
+                textAlign: 'left',
+                fontFamily: 'var(--font-inter)',
+              }}
+            >
+              {link.label}
+            </button>
+          ))}
+          <a
+            href="mailto:david@david4olney.uk?subject=Join%20Our%20Campaign"
+            className="btn btn-primary"
+            style={{ textAlign: 'center', marginTop: '0.5rem' }}
+          >
+            Join Our Campaign
+          </a>
+        </div>
+      )}
     </nav>
   )
 }
