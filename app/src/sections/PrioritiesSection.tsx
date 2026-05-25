@@ -29,14 +29,6 @@ const priorities = [
     title: 'Infrastructure Before Housing',
     desc: 'Insist that proper roads, services, and green space provision are in place before any new housing development is approved. Rural villages must not be overwhelmed without proper planning.',
   },
-  {
-    title: 'Rural Flood Prevention',
-    desc: 'Our rural communities are bearing the brunt of flooding because this council is focused on urban expansion and paving over natural floodplains. I will fight for proper flood defences and insist that prevention comes before crisis.',
-  },
-  {
-    title: 'Stop Over-Development & the New Town',
-    desc: "The council's appetite for sprawling development is destroying the rural character of our villages. I will fight every reckless 'New Town' proposal that threatens to concrete over our countryside without infrastructure, consultation, or consent.",
-  },
 ]
 
 export default function PrioritiesSection() {

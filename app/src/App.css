@@ -1,0 +1,30 @@
+/* Responsive */
+@media (min-width: 768px) {
+  .hero-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  .about-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  .contact-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .policy-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+  .nav-links {
+    display: flex !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .policy-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}

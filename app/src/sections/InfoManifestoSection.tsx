@@ -35,16 +35,6 @@ const policyCards = [
     title: 'Infrastructure Before Housing',
     body: 'Insist that proper roads, services, and green space provision are in place before any new housing development is approved. Rural villages must not be overwhelmed without proper planning.',
   },
-  {
-    icon: '🌊',
-    title: 'Rural Flood Prevention',
-    body: 'Our rural communities are bearing the brunt of flooding because this Labour-Lib Dem council is focused on urban expansion. I will fight for proper flood defences and protect the natural floodplains being paved over by overdevelopment. Prevention must come before crisis.',
-  },
-  {
-    icon: '🛑',
-    title: 'Stop Over-Development',
-    body: "The council's appetite for sprawling development is destroying the rural character of our villages. I will fight every reckless 'New Town' proposal that threatens to concrete over our countryside without infrastructure, consultation, or consent.",
-  },
 ]
 
 export default function InfoManifestoSection() {
@@ -82,8 +72,6 @@ export default function InfoManifestoSection() {
       const c4 = cardRefs.current[3]
       const c5 = cardRefs.current[4]
       const c6 = cardRefs.current[5]
-      const c7 = cardRefs.current[6]
-      const c8 = cardRefs.current[7]
 
       // 1. "Fix" from left
       tl.fromTo(t1, { x: '-100vw', opacity: 0 }, { x: 0, opacity: 1, ease: 'power1.out' })
@@ -112,26 +100,20 @@ export default function InfoManifestoSection() {
       // 9. Card 5 from left at 0.52
       tl.fromTo(c5, { x: '-50vw', opacity: 0 }, { x: 0, opacity: 1 }, 0.52)
 
-      // 10. Card 6 from right at 0.56
+      // 10. Card 6 from right
       tl.fromTo(c6, { x: '50vw', opacity: 0 }, { x: 0, opacity: 1 }, 0.56)
 
-      // 11. Card 7 from left at 0.60
-      tl.fromTo(c7, { x: '-50vw', opacity: 0 }, { x: 0, opacity: 1 }, 0.60)
+      // 11. "The" from right at 0.64
+      tl.fromTo(t5, { x: '100vw', opacity: 0 }, { x: 0, opacity: 1 }, 0.64)
 
-      // 12. Card 8 from right at 0.64
-      tl.fromTo(c8, { x: '50vw', opacity: 0 }, { x: 0, opacity: 1 }, 0.64)
+      // 12. "Future" from left at 0.72
+      tl.fromTo(t6, { x: '-100vw', opacity: 0 }, { x: 0, opacity: 1 }, 0.72)
 
-      // 13. "The" from right at 0.72
-      tl.fromTo(t5, { x: '100vw', opacity: 0 }, { x: 0, opacity: 1 }, 0.72)
+      // 13. Tagline at 0.82
+      tl.fromTo(tagline, { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, ease: 'power1.out' }, 0.82)
 
-      // 14. "Future" from left at 0.78
-      tl.fromTo(t6, { x: '-100vw', opacity: 0 }, { x: 0, opacity: 1 }, 0.78)
-
-      // 15. Tagline at 0.88
-      tl.fromTo(tagline, { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, ease: 'power1.out' }, 0.88)
-
-      // 16. Subtitle at 0.94
-      tl.fromTo(subtitle, { opacity: 0 }, { opacity: 1, ease: 'power1.out' }, 0.94)
+      // 14. Subtitle at 0.9
+      tl.fromTo(subtitle, { opacity: 0 }, { opacity: 1, ease: 'power1.out' }, 0.9)
     }, sectionRef)
 
     return () => ctx.revert()
@@ -272,40 +254,6 @@ export default function InfoManifestoSection() {
             </h3>
             <p style={{ fontSize: '0.95rem', lineHeight: 1.6, color: 'var(--colour-text-muted)' }}>
               {policyCards[5].body}
-            </p>
-          </div>
-        </div>
-
-        {/* Card 7 — NEW: Rural Flood Prevention */}
-        <div
-          ref={(el) => { if (el) cardRefs.current[6] = el }}
-          className="manifesto-policy-card manifesto-left"
-          style={{ marginTop: '0.5rem', marginBottom: '0.5rem' }}
-        >
-          <span style={{ fontSize: '2.5rem', flexShrink: 0 }}>{policyCards[6].icon}</span>
-          <div>
-            <h3 style={{ fontWeight: 600, fontSize: '1.15rem', lineHeight: 1.2, color: 'var(--colour-text-dark)', marginBottom: '0.5rem' }}>
-              {policyCards[6].title}
-            </h3>
-            <p style={{ fontSize: '0.95rem', lineHeight: 1.6, color: 'var(--colour-text-muted)' }}>
-              {policyCards[6].body}
-            </p>
-          </div>
-        </div>
-
-        {/* Card 8 — NEW: Stop Over-Development */}
-        <div
-          ref={(el) => { if (el) cardRefs.current[7] = el }}
-          className="manifesto-policy-card manifesto-right"
-          style={{ marginTop: '0.5rem', marginBottom: '0.5rem' }}
-        >
-          <span style={{ fontSize: '2.5rem', flexShrink: 0 }}>{policyCards[7].icon}</span>
-          <div>
-            <h3 style={{ fontWeight: 600, fontSize: '1.15rem', lineHeight: 1.2, color: 'var(--colour-text-dark)', marginBottom: '0.5rem' }}>
-              {policyCards[7].title}
-            </h3>
-            <p style={{ fontSize: '0.95rem', lineHeight: 1.6, color: 'var(--colour-text-muted)' }}>
-              {policyCards[7].body}
             </p>
           </div>
         </div>
