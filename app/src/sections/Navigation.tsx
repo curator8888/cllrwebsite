@@ -86,6 +86,26 @@ export default function Navigation() {
             </button>
           ))}
           <a
+            href="https://blog.david4olney.uk"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              background: 'none',
+              border: 'none',
+              fontWeight: 500,
+              fontSize: '0.95rem',
+              color: 'var(--colour-text-dark)',
+              textDecoration: 'none',
+              cursor: 'pointer',
+              transition: 'color 0.2s',
+              fontFamily: 'var(--font-inter)',
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--colour-brand-blue)')}
+            onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--colour-text-dark)')}
+          >
+            News
+          </a>
+          <a
             href="mailto:david@david4olney.uk?subject=Join%20Our%20Campaign"
             className="btn btn-primary"
           >
@@ -157,6 +177,24 @@ export default function Navigation() {
               {link.label}
             </button>
           ))}
+          <a
+            href="https://blog.david4olney.uk"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              fontWeight: 500,
+              fontSize: '1rem',
+              color: 'var(--colour-text-dark)',
+              textDecoration: 'none',
+              padding: '0.5rem 0',
+              textAlign: 'left',
+              fontFamily: 'var(--font-inter)',
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--colour-brand-blue)')}
+            onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--colour-text-dark)')}
+          >
+            News
+          </a>
           <a
             href="mailto:david@david4olney.uk?subject=Join%20Our%20Campaign"
             className="btn btn-primary"

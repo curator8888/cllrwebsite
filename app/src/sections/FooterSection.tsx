@@ -9,8 +9,24 @@ export default function FooterSection() {
         </p>
       </div>
       <div style={{ background: '#0B1120', padding: '1.5rem clamp(1rem, 5vw, 3rem)', textAlign: 'center' }}>
+        <p style={{ fontSize: '0.85rem', margin: '0 0 0.5rem' }}>
+          <a
+            href="https://blog.david4olney.uk"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              color: 'var(--colour-brand-blue)',
+              textDecoration: 'none',
+              fontWeight: 600,
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--colour-brand-blue-hover)')}
+            onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--colour-brand-blue)')}
+          >
+            News — ward updates &amp; campaign blog
+          </a>
+        </p>
         <p style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.5)' }}>
-          &copy; 2026 David Tyler — Conservative Councillor, Olney & Rural Ward, Milton Keynes City Council
+          &copy; 2026 David Tyler — Conservative Councillor, Olney &amp; Rural Ward, Milton Keynes City Council
         </p>
         <p style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.5)', opacity: 0.5, marginTop: '0.25rem' }}>
           Proudly serving our community
